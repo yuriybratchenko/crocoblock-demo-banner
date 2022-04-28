@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+$primary: #0dc167;
+$secondary: #0F172A;
+$invert: #fff;
+
+$offset: 20px;
+
+div.croco-upgrade-container {
+	font-family: 'Cabin', sans-serif;
+	background-color: $secondary;
+	background-image: url(https://crocoblock.com/wp-content/uploads/2022/04/Banner-Unlock-bg.jpg);
+	background-position: center center;
+	background-size: cover;
+
+	.cs-upgrade-banner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 990px;
+		padding: 0 15px;
+		margin: 0 auto;
+	}
+
+	.cs-upgrade-banner-box {
+		display: flex;
+		figure { margin: 0; }
+		img { margin-right: $offset; }
+		p {
+			font-weight: 700;
+			color: $invert;
+			letter-spacing: 0;
+			margin: 0;
+			&.title {
+				font-size: 32px;
+				line-height: 40px;
+			}
+			&.subtitle {
+				font-size: 20px;
+				line-height: 28px;
+			}
+		}
+	}
+
+	.cs-upgrade-banner .content-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	a.cs-btn {
+		display: inline-flex;
+		justify-content: center;
+		border-radius: 40px;
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 700;
+		letter-spacing: 0;
+		text-decoration: none;
+		white-space: nowrap;
+		padding: 6px 16px;
+		background-clip: border-box;
+		transition: .25s ease;
+		cursor: pointer;
+		border: 2px solid $primary;
+
+		&.get-link {
+			background-color: $primary;
+			box-shadow: 0 2px 20px rgba(13, 193, 103, 0.5);
+			color: $invert;
+			margin-right: $offset;
+			del {
+				font-weight: 400;
+				opacity: .5;
+			}
+			&:hover {
+				box-shadow: none;
+			}
+		}
+
+		&.upgrade {
+			color: $primary;
+			background-color: transparent;
+			&:hover {
+				color: $invert;
+			}
+		}
+
+	}
+
+	@media (max-width: 950px) {
+		padding-top: $offset/1.5;
+		padding-bottom: $offset/1.5;
+		img {
+			display: none;
+		}
+		a.cs-btn.get-link {
+			margin-right: $offset/2;
+		}
+	}
+	@media (max-width: 800px) {
+		.cs-upgrade-banner {
+			flex-direction: column;
+		}
+		.cs-upgrade-banner-box {
+			text-align: center;
+			margin-bottom: $offset/4;
+		}
+	}
+	@media (max-width: 520px) {
+		.cs-upgrade-banner-box p.title {
+			font-size: 28px;
+			line-height: 34px;
+		}
+	}
+	@media (max-width: 413px) {
+		.cs-upgrade-banner-box {
+			p.title {
+				font-size: 22px;
+				line-height: 28px;
+			}
+			p.subtitle {
+				font-size: 16px;
+				line-height: 22px;
+			}
+		}
+		.cs-upgrade-banner-btns {
+			text-align: center;
+			a.get-link {
+				margin: 0 0 $offset/2;
+			}
+		}
+	}
+}
