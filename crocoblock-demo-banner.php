@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Crocoblock Demo Banner
- * Description: Crocoblock Demo Banner
+ * Description: Crocoblock Demo Banner for dynamic templates
  * Version:     1.0.0
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
@@ -170,6 +170,9 @@ if ( ! class_exists( 'Crocoblock_Demo_Banner' ) ) {
 		 */
 		public function enqueue_assets() {
 			wp_enqueue_style( 'crocoblock-demo-banner', $this->plugin_url( 'assets/css/frontend.css' ), false, $this->get_version() );
+
+            wp_register_script ('db-script', plugins_url ('/assets/js/main.js', __FILE__), $this->get_version(), true );
+            wp_enqueue_script ('db-script');
 		}
 
 		/**

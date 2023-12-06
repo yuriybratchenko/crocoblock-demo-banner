@@ -4,40 +4,20 @@
  */
 
 $settings = $this->get_settings();
-
-$price    = $settings['price'];
-$price_sale = $settings['price-sale'];
-
-$banner_title = $settings['banner-title'];
-$banner_subtitle = $settings['banner-subtitle'];
-
-$banner_upgrade_label = $settings['banner-upgrade-label'];
-$banner_upgrade_link = $settings['banner-upgrade-link'];
-
-$banner_price_label = $settings['banner-price-label'];
-$banner_price_link = $settings['banner-price-link'];
-
-$url = 'https://crocoblock.com/wp-content/uploads/';
+$dynamic_models = $settings['dynamic-models'];
+$widgets_count = $settings['widgets-count'];
+$purchase_utm = $settings['purchase-utm'];
+$navigation_utm = $settings['navigation-utm'];
 ?>
 
 <div class="croco-upgrade-container">
-    <div class="cs-upgrade-banner">
-        <div class="cs-upgrade-banner-box">
-            <img src="<?php echo $url;?>2022/04/lock.png" srcset="<?php echo $url;?>2022/04/lock-retina.png 2x" alt="lock">
-            <div class="content-box">
-                <p class="title"><?php echo $banner_title;?></p>
-                <p class="subtitle"><?php echo $banner_subtitle;?></p>
-            </div>
-        </div>
-        <div class="cs-upgrade-banner-btns">
-            <a href="<?php echo $banner_price_link;?>" class="cs-btn get-link" role="button" target="_blank"><?php echo $banner_price_label;?>
-                <?php if ( $price_sale ) {
-                    echo sprintf('&nbsp;<del>$%1$s</del>&nbsp;$%2$s', $price, $price_sale );
-                } else {
-                    echo sprintf('$%s', $price );
-                }?>
-            </a>
-            <a href="<?php echo $banner_upgrade_link;?>" class="cs-btn upgrade" role="button" target="_blank"><?php echo $banner_upgrade_label;?></a>
-        </div>
-    </div>
+    Find more solutions to cover your development needs using&nbsp;
+    <a href="https://crocoblock.com/plugins/<?php echo $navigation_utm;?>" class="btn-link" role="button" target="_blank">JetPlugins</a>
+    &nbsp;and&nbsp;
+    <a href="https://crocoblock.com/widgets/<?php echo $navigation_utm;?>" class="btn-link" role="button" target="_blank"><?php echo $widgets_count;?> widgets</a>
+</div>
+
+<div class="croco-upgrade-popup">
+    <div>Get all <a href="https://crocoblock.com/dynamic-templates/<?php echo $purchase_utm;?>" class="btn-link" role="button" target="_blank"><?php echo $dynamic_models;?></a><br> with All-Inclusive subscription</div>
+    <a href="https://crocoblock.com/pricing/<?php echo $purchase_utm;?>" class="btn" role="button" target="_blank">Choose subscription</a>
 </div>
